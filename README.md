@@ -34,6 +34,8 @@ y[4] &= x[2]h[2] = (0.5)(0.3) = 0.15
 \end{aligned}
 $$
 
+![](./plots/convolution_decomposition.png)
+
 #### Properties
 
 **Commutative**
