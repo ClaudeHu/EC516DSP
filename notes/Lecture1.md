@@ -100,3 +100,7 @@ y[n] = \underbrace{\mathcal{H}}_{A}\big\lbrace\underbrace{e^{j\omega n}}_{\mathb
 $$
 
 $A$ → the system itself, $\mathcal{H}$. In linear algebra, $A$ is the operation that transforms a vector.
+
+**example**
+
+$x[n] = e^{j\omega n}$ - the note as input, a steady spin at one frequency $\omega$ (pitch)
