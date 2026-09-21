@@ -8,7 +8,7 @@ $$
 y[n] = x[n] * h[n] = \sum_{k=-\infty}^{\infty} x[k]h[n-k]
 $$
 
-**Example**
+#### Example
 
 The input x[n] is the guitarist's plucks: a strong pluck at n = 0, silence at n = 1, and a softer pluck at n = 2.
 
