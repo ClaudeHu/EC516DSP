@@ -83,10 +83,18 @@ $e^{j\omega n}$ is an eigenfunction of the system, and the associated eigenvalue
 
 **eigen**
 
-In linear algebra, a matrix $A$ usually changes both the length and the direction of a vector. A few special vectors only get stretched, and their direction stays the same:
+A matrix $A$ usually changes both the length and the direction of a vector. A few special vectors only get stretched, and their direction stays the same:
 
 $$
 A\mathbf{v} = \lambda\mathbf{v}
 $$
 
 Here $\mathbf{v}$ is an eigenvector and the number $\lambda$ is its eigenvalue. "Eigen" is German for "own" or "characteristic": these are the system's own special inputs.
+
+**eigen in LTI system**:
+
+$$
+y[n] = \underbrace{\mathcal{H}}_{A}\big\lbrace\underbrace{e^{j\omega n}}_{\mathbf{v}}\big\rbrace = \underbrace{H(e^{j\omega})}_{\lambda}\underbrace{e^{j\omega n}}_{\mathbf{v}}
+$$
+
+$A$ → the system itself, $\mathcal{H}$. In linear algebra, $A$ is the operation that transforms a vector.
