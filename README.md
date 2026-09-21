@@ -5,7 +5,7 @@
 ### Convolution sum
 
 $$
-y[n] = x[n] * h[n] = \sum_{k=-\infty}^{\infty} x[k]h[n-k]
+y[n] = x[n] * h[n] = \sum_{k=-\infty}^{\infty} x[k]h[n-k] = \sum_{k=-\infty}^{\infty} h[k]x[n-k]
 $$
 
 #### Example
@@ -36,7 +36,7 @@ $$
 
 #### Properties
 
-**Commulative**
+**Commutative**
 
 $$
 x[n] * h[n] = h[n] * x[n]
@@ -55,7 +55,8 @@ Example: A kerb impact x[n] passes through the tyre h1[n] = {0.8, 0.2}, then the
 **Distributive**
 
 $$
-x[n] * \big(h_1[n] + h_2[n]\big) = x[n] * h_1[n] + x[n] * h_2[n]
+x[n] * h[n] = x[n] * \big(h_1[n] + h_2[n]\big) = x[n] * h_1[n] + x[n] * h_2[n]
 $$
 
 Example: You record with two microphones, a close mic that hears only the direct sound, h₁ = {1}, and a room mic that hears only the reflections, h₂ = {0, 0.6, 0.3}. The close mic gives {1, 0, 0.5} and the room mic gives {0, 0.6, 0.3, 0.3, 0.15}. Mixing them sample by sample gives {1, 0.6, 0.8, 0.3, 0.15}, exactly what one mic in the hall with h = h₁ + h₂ would record.
+
