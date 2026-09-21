@@ -33,3 +33,29 @@ y[3] &= x[1]h[2] + x[2]h[1] = 0 + (0.5)(0.6) = 0.3 \\
 y[4] &= x[2]h[2] = (0.5)(0.3) = 0.15
 \end{aligned}
 $$
+
+#### Properties
+
+**Commulative**
+
+$$
+x[n] * h[n] = h[n] * x[n]
+$$
+
+Example: It doesn't matter whether you treat the plucks as the input to the hall or the hall's echo pattern as the input "played" by the plucks. Checking one sample with the swapped order gives y[2] = h[0]x[2] + h[1]x[1] + h[2]x[0] = 0.5 + 0 + 0.3 = 0.8, the same as before.
+
+**Associative**
+
+$$
+\big(x[n] * h_1[n]\big) * h_2[n] = x[n] * \big(h_1[n] * h_2[n]\big)
+$$
+
+Example: A kerb impact x[n] passes through the tyre h1[n] = {0.8, 0.2}, then the suspension h2[n] = {0.5, 0.3}, before reaching the chassis. You can simulate the two stages one after the other, or first combine them into a single "tyre + suspension" response, h1 * h2 = {0.4, 0.34, 0.06}, and convolve the kerb with that. Engineers use this to model a whole cascaded system as one block.
+
+**Distributive**
+
+$$
+x[n] * \big(h_1[n] + h_2[n]\big) = x[n] * h_1[n] + x[n] * h_2[n]
+$$
+
+Example: You record with two microphones, a close mic that hears only the direct sound, h₁ = {1}, and a room mic that hears only the reflections, h₂ = {0, 0.6, 0.3}. The close mic gives {1, 0, 0.5} and the room mic gives {0, 0.6, 0.3, 0.3, 0.15}. Mixing them sample by sample gives {1, 0.6, 0.8, 0.3, 0.15}, exactly what one mic in the hall with h = h₁ + h₂ would record.
