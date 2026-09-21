@@ -69,6 +69,11 @@ x[n] = e^{j\omega n}
 $$
 
 $$
+y[n] = \sum_{k=-\infty}^{\infty} h[k] e^{j\omega (n-k)}
+     = e^{j\omega n} \underbrace{\sum_{k=-\infty}^{\infty} h[k] e^{-j\omega k}}_{H(e^{j\omega})}
+$$
+
+$$
 y[n] = H(e^{j\omega}) e^{j\omega n}
 $$
 
