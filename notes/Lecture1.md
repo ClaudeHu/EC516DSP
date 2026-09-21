@@ -104,3 +104,11 @@ $A$ → the system itself, $\mathcal{H}$. In linear algebra, $A$ is the operatio
 **example**
 
 $x[n] = e^{j\omega n}$ - the note as input, a steady spin at one frequency $\omega$ (pitch)
+
+h[n] - impulse response
+* h[0]: the direct sound hitting the mic
+* h[3]: a reflection off the back wall arriving 3 samples later, somewhat quieter
+* h[40]: a faint bounce off the ceiling, and so on
+
+$y[n] = \sum_{k=-\infty}^{\infty} h[k] e^{j\omega (n-k)}$
+* $e^{j\omega (n-k)}$ - the note as it was k samples ago,
