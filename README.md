@@ -65,3 +65,28 @@ $$
 
 Example: You record with two microphones, a close mic that hears only the direct sound, h₁ = {1}, and a room mic that hears only the reflections, h₂ = {0, 0.6, 0.3}. The close mic gives {1, 0, 0.5} and the room mic gives {0, 0.6, 0.3, 0.3, 0.15}. Mixing them sample by sample gives {1, 0.6, 0.8, 0.3, 0.15}, exactly what one mic in the hall with h = h₁ + h₂ would record.
 
+### Frequency Domain
+
+$$
+x[n] = e^{j\omega n}
+$$
+
+$$
+y[n] = H(e^{j\omega}) e^{j\omega n}
+$$
+
+$$
+H(e^{j\omega}) = \sum_{k=-\infty}^{\infty} h[k] e^{-j\omega k}
+$$
+
+$e^{j\omega n}$ is an eigenfunction of the system, and the associated eigenvalue is $H(e^{j\omega})$
+
+**eigen**
+
+In linear algebra, a matrix $A$ usually changes both the length and the direction of a vector. A few special vectors only get stretched, and their direction stays the same:
+
+$$
+A\mathbf{v} = \lambda\mathbf{v}
+$$
+
+Here $\mathbf{v}$ is an eigenvector and the number $\lambda$ is its eigenvalue. "Eigen" is German for "own" or "characteristic": these are the system's own special inputs.
