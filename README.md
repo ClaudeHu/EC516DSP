@@ -1,2 +1,3 @@
 # EC516DSP
-Review for Digital Signal Processing
+
+## Lecture 1
