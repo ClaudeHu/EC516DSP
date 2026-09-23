@@ -20,6 +20,10 @@ $$
 $$
 Gain = Magnitude = |H(e^{j\omega})|
 $$
+$$
+y[n] = H(e^{j\omega}) e^{j\omega n} = |H(e^{j\omega})| e^{j\angle H(e^{j\omega})}  e^{j\omega n} = |H(e^{j\omega})| e^{j\omega n + j\angle H(e^{j\omega})} = \underbrace{|H(e^{j\omega})|}_{gain} e^{j\omega (n - \underbrace{\frac{\angle H(e^{j\omega})}{\omega})}_{delay}} 
+$$
+
 
 **Example**
 
