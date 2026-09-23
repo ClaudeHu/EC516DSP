@@ -51,3 +51,28 @@ $$
 H(e^{j\omega}) = \sum_{k=-\infty}^{\infty} h[k] e^{-j\omega k} = \text{Fourier Transform of h[n]}
 $$
 
+### Properties
+
+**Periodicity**
+
+$$X(e^{j(\omega + 2\pi)}) = X(e^{j\omega})$$
+
+**Time Shifting**
+
+$$x[n - n_0] \;\longleftrightarrow\; e^{-j\omega n_0}\, X(e^{j\omega})$$
+
+**Frequency Shifting**
+
+$$e^{j\omega_0 n}\, x[n] \;\longleftrightarrow\; X(e^{j(\omega - \omega_0)})$$
+
+**Time Reversal**
+
+$$x[-n] \;\longleftrightarrow\; X(e^{-j\omega})$$
+
+**Linearity**
+
+$$a\,x_1[n] + b\,x_2[n] \;\longleftrightarrow\; a\,X_1(e^{j\omega}) + b\,X_2(e^{j\omega})$$
+
+**Convolution**
+
+$$x[n] * h[n] = \sum_{k=-\infty}^{\infty} x[k]\,h[n-k] \;\longleftrightarrow\; X(e^{j\omega})\,H(e^{j\omega})$$
