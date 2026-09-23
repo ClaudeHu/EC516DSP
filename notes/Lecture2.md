@@ -43,5 +43,5 @@ $H(e^{j\omega})$: A very sharp resonance peak centred on the natural frequency. 
 
 $|H(e^{j\omega})|$: The balance amplitude, the swing angle, typically about 270–310°. Near resonance, small kicks build up a large swing. Off-resonance inputs such as random wrist jolts are strongly attenuated.
 
-$$: short lag in where in the cycle the balance is (phase delay)
+$\frac{-\angle H(e^{j\omega})}{\omega}$: short lag in where in the cycle the balance is (phase delay)
 
