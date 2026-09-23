@@ -12,7 +12,7 @@ $$
 sin(\omega_0 n) = \frac{j}{2}e^{-j\omega_0 n} - \frac{j}{2}e^{j\omega_0 n}
 $$
 
-### Gain & Delay
+## Gain & Delay
 
 $$
 Frequency\ Response:\ H(e^{j\omega}) = |H(e^{j\omega})| e^{j\angle H(e^{j\omega}}
@@ -44,4 +44,10 @@ $H(e^{j\omega})$: A very sharp resonance peak centred on the natural frequency. 
 $|H(e^{j\omega})|$: The balance amplitude, the swing angle, typically about 270–310°. Near resonance, small kicks build up a large swing. Off-resonance inputs such as random wrist jolts are strongly attenuated.
 
 $\frac{-\angle H(e^{j\omega})}{\omega}$: short lag in where in the cycle the balance is (phase delay)
+
+## Fourier Transform
+
+$$
+H(e^{j\omega}) = \sum_{k=-\infty}^{\infty} h[k] e^{-j\omega k} = \text{Fourier Transform of h[n]}
+$$
 
