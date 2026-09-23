@@ -15,8 +15,13 @@ $$
 ### Gain & Delay
 
 $$
-H(e^{j\omega}) = |H(e^{j\omega})| e^{j\angle H(e^{j\omega}}
+Frequency\ Response:\ H(e^{j\omega}) = |H(e^{j\omega})| e^{j\angle H(e^{j\omega}}
 $$
 $$
 Gain = Magnitude = |H(e^{j\omega})|
 $$
+
+**Example**
+
+Zenith watch movement  beats at 28,800 vibrations per hour = $4 Hz$ oscillation
+Discrete time resonator model: 
