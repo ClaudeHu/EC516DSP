@@ -1,6 +1,6 @@
 # Lecture 2
 
-## Frequency Domain
+## Sinusoid
 
 $$
 e^{j\omega_0 n} = cos(\omega_0 n) + j sin(\omega_0 n)
