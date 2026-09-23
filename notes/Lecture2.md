@@ -11,3 +11,12 @@ $$
 $$
 sin(\omega_0 n) = \frac{j}{2}e^{-j\omega_0 n} - \frac{j}{2}e^{j\omega_0 n}
 $$
+
+### Gain & Delay
+
+$$
+H(e^{j\omega}) = |H(e^{j\omega})| e^{j\angle H(e^{j\omega}}
+$$
+$$
+Gain = Magnitude = |H(e^{j\omega})|
+$$
