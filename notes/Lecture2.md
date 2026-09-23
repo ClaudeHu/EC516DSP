@@ -27,5 +27,7 @@ $$
 
 **Example**
 
-Zenith watch movement  beats at 28,800 vibrations per hour = $4 Hz$ oscillation
-Discrete time resonator model: 
+
+
+$$x[n]$$: impulses the pallet fork delivers to the balance, 8 per second at 28,800 vph (4 Hz oscillation because each full back-and-forth cycle takes two beats)
+
