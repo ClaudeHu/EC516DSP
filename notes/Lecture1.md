@@ -1,5 +1,44 @@
 # Lecture 1
 
+## Convolution
+
+### Different from Multiplication
+
+$$
+x[n-b]h[n-b] = y[n-b]
+$$
+
+but:
+
+$$
+x[n-b]*h[n-b] = y[n-2b]
+$$
+
+Example:
+
+River gauge downstream of a watershed.
+
+- `x[n]` = rainfall on day n (the input)
+- `h[n]` = the watershed's impulse response — how much water passes the
+  gauge n days after one unit of rain falls. Its index is *elapsed time
+  since the rain*, not a calendar day.
+- `y[n] = x[n] * h[n]` = the flow you measure at the gauge
+
+Convolution is exactly right here: each day's rain spreads out over the
+following days, and the total flow on any day is the sum of contributions
+from all the earlier storms. The system is causal — `h[n] = 0` for `n < 0`,
+since no water reaches the gauge before the rain falls — so `y[n]` depends
+only on rain that has already happened.
+
+x[n−7] — the same storm, but it arrives 7 days later. Rain late →
+flood late. Pushes the output 7 days later.
+
+h[n+5] — the watershed now routes water 5 days faster: say the marsh
+was drained and channelized, so runoff reaches the gauge sooner. Faster
+system → flood sooner. Pulls the output 5 days earlier.
+
+Net effect: 7 late − 5 early = 2 days late. That's `y[n−2]`.
+
 ## Convolution sum
 
 $$
