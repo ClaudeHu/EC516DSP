@@ -85,4 +85,9 @@ $$a\,x_1[n] + b\,x_2[n] \;\longleftrightarrow\; a\,X_1(e^{j\omega}) + b\,X_2(e^{
 
 $$x[n] * h[n] = \sum_{k=-\infty}^{\infty} x[k]\,h[n-k] \;\longleftrightarrow\; X(e^{j\omega})\,H(e^{j\omega})$$
 
-### Trick to Remember
+## z-transform
+
+$$
+\mathcal{X}(z) = \sum_{n=-\infty}^{\infty}x[n]z^{-n}
+$$
+
