@@ -45,6 +45,14 @@ $|H(e^{j\omega})|$: The balance amplitude, the swing angle, typically about 270â
 
 $\frac{-\angle H(e^{j\omega})}{\omega}$: short lag in where in the cycle the balance is (phase delay)
 
+
+**Trick to Remember**
+
+$$
+1 - e^{-j\omega} = e^{-\frac{j\omega}{2}} (e^{\frac{j\omega}{2}} - e^{-\frac{j\omega}{2}})
+$$
+
+
 ## Fourier Transform
 
 $$
@@ -76,3 +84,5 @@ $$a\,x_1[n] + b\,x_2[n] \;\longleftrightarrow\; a\,X_1(e^{j\omega}) + b\,X_2(e^{
 **Convolution**
 
 $$x[n] * h[n] = \sum_{k=-\infty}^{\infty} x[k]\,h[n-k] \;\longleftrightarrow\; X(e^{j\omega})\,H(e^{j\omega})$$
+
+### Trick to Remember
