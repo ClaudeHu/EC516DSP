@@ -91,3 +91,6 @@ $$
 \mathcal{X}(z) = \sum_{n=-\infty}^{\infty}x[n]z^{-n}
 $$
 
+**Example**
+
+When record a guitar into a computer, the audio becomes a list of numbers (samples), taken for example 48,000 times per second. Call this sequence x[n], where n is the sample number.
