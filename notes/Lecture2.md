@@ -91,6 +91,14 @@ $$
 \mathcal{X}(z) = \sum_{n=-\infty}^{\infty}x[n]z^{-n}
 $$
 
+**Properties**
+
+1. Linearity: $a\,x_1[n] + b\,x_2[n] \;\longleftrightarrow\; a\,X_1(z) + b\,X_2(z)$
+2. Shift: $x[n-k] \;\longleftrightarrow\; z^{-k} X(z)$
+3. Flip: $x[-n] \;\longleftrightarrow\; X(z^{-1})$
+4. Conjugation: $x^*[n] \;\longleftrightarrow\; X^*(z^*)$
+5. Convolution: $x_1[n] * x_2[n] \;\longleftrightarrow\; X_1(z)\, X_2(z)$
+
 **Example**
 
 When record a guitar into a computer, the audio becomes a list of numbers (samples), taken for example 48,000 times per second. Call this sequence x[n], where n is the sample number.
