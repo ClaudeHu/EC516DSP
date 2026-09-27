@@ -101,7 +101,7 @@ $$
 
 **Example**
 
-When record a guitar into a computer, the audio becomes a list of numbers (samples), taken for example 48,000 times per second. Call this sequence x[n], where n is the sample number.
+When you pluck a string, the sampled envelope decays roughly geometrically. Model it as $x[n] = a^n u[n]$
 
 $z^{-1}$: delayed by one sample
 
