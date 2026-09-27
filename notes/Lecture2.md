@@ -96,7 +96,7 @@ $$
 1. Linearity: $a\,x_1[n] + b\,x_2[n] \;\longleftrightarrow\; a\,X_1(z) + b\,X_2(z)$
 2. Shift: $x[n-k] \;\longleftrightarrow\; z^{-k} X(z)$
 3. Flip: $x[-n] \;\longleftrightarrow\; X(z^{-1})$
-4. Conjugation: $x^*[n] \;\longleftrightarrow\; X^*(z^*)$
+4. Conjugation: $x^{\ast}[n] \;\longleftrightarrow\; X^{\ast}(z^{\ast})$
 5. Convolution: $x_1[n] * x_2[n] \;\longleftrightarrow\; X_1(z)\, X_2(z)$
 
 **Example**
