@@ -102,3 +102,5 @@ $z^{-1}$: delayed by one sample
 polar: $z=re^{j\omega}$
 
 * $r$: the radius, also is the growth or decay rate per sample.
+
+![](../plots/z-plane.png)
