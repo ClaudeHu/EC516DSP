@@ -115,3 +115,17 @@ z-transform asks: for every point on this plane, how much of that behavior is in
 
 [Interactive demo](https://htmlpreview.github.io/?https://github.com/ClaudeHu/EC516DSP/blob/main/interactive/watch_tick_z_plane.html)
 
+A ticking seconds hand. It moves in discrete jumps (samples), and each tick rotates it by a fixed angle.
+
+| z-plane concept | Watch equivalent |
+|---|---|
+| Origin | The center pinion the hands sit on |
+| Unit circle | The path traced by the tip of a hand of length 1 |
+| Point $z = e^{j\omega}$ | Where the hand tip sits after one tick |
+| $n$ (sample index) | Tick count |
+| $\omega$ (rad/sample) | Angle jumped per tick. A quartz-style tick is $6^\circ$, so $\omega = 2\pi/60$. |
+| Smaller $\omega$ | A higher-beat movement. At 28,800 vph (8 beats/s) the hand advances only $2\pi/480$ per beat, so the sweep looks smooth. |
+| $z = 1$ ($\omega = 0$) | A stopped hand: DC |
+| $z = -1$ ($\omega = \pi$) | The hand jumps $180^\circ$ per tick. You can't tell which way it's turning, which is the Nyquist limit. |
+| $2\pi$ periodicity / aliasing | If the hand jumped $354^\circ$ per tick, it would look like it was stepping backward $6^\circ$. This is the wagon-wheel effect, and it's exactly why frequencies above $\pi$ alias. |
+| $r$ (radius) | The hand's length changing each tick |
