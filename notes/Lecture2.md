@@ -113,4 +113,5 @@ z-transform asks: for every point on this plane, how much of that behavior is in
 
 **Example**
 
+[Interactive demo](https://htmlpreview.github.io/?https://github.com/ClaudeHu/EC516DSP/blob/main/interactive/watch_tick_z_plane.html)
 
