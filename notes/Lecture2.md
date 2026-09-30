@@ -117,6 +117,8 @@ z-transform asks: for every point on this plane, how much of that behavior is in
 
 A ticking seconds hand. It moves in discrete jumps (samples), and each tick rotates it by a fixed angle.
 
+![](../plots/watch_vs_z_plane.png)
+
 | z-plane concept | Watch equivalent |
 |---|---|
 | Origin | The center pinion the hands sit on |
