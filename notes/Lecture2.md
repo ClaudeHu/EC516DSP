@@ -39,6 +39,8 @@ $$h[n]$$: Give the balance one flick and let go. It rings as a decaying sinusoid
 
 * Q: quality factor, describes how "good" a tuned circuit was. Q = 2π × (energy stored) ÷ (energy lost per cycle)
 
+$\omega_0$: the location of the resonance peak.
+
 $H(e^{j\omega})$: A very sharp resonance peak centred on the natural frequency. The high Q is what makes the watch a good timekeeper: it rejects disturbances away from its own frequency.
 
 $|H(e^{j\omega})|$: The balance amplitude, the swing angle, typically about 270–310°. Near resonance, small kicks build up a large swing. Off-resonance inputs such as random wrist jolts are strongly attenuated.
