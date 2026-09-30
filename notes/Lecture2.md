@@ -103,4 +103,14 @@ polar: $z=re^{j\omega}$
 
 * $r$: the radius, also is the growth or decay rate per sample.
 
+### z-plane
+
 ![](../plots/z-plane.png)
+
+z-transform asks: for every point on this plane, how much of that behavior is in the signal.
+* $z=1\ (\omega=0)$: direct current, a constant signal.
+*  $z=-1\ (\omega=\pi)$: the Nyquist frequency, where the signal flips sign every sample. This is the fastest a sampled signal can oscillate.
+
+**Example**
+
+
