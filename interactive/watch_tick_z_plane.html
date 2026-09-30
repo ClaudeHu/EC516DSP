@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Watch hand vs. z-plane</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EEF1F3;--panel:#FFFFFF;--ink:#1B2330;--muted:#6B7684;--line:#C9D0D6;--lume:#2E8B68;--hand:#C8551F;}
+@media (prefers-color-scheme: dark){:root{--bg:#12171E;--panel:#1A212B;--ink:#E6EAEE;--muted:#98A2AE;--line:#39434F;--lume:#4FC196;--hand:#EE8A4F;}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Manrope,system-ui,-apple-system,sans-serif;line-height:1.55}
+main{max-width:960px;margin:0 auto;padding:28px 20px 40px}
+h1{font-size:1.5rem;font-weight:600;margin:0 0 4px}
+.sub{color:var(--muted);margin:0 0 18px;max-width:70ch}
+.stage{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:12px}
+svg{display:block;width:100%;height:auto}
+.controls{margin-top:16px;display:grid;gap:10px}
+.row{display:flex;align-items:center;gap:12px;color:var(--muted)}
+.row label{min-width:90px}
+.row input{flex:1;accent-color:var(--hand)}
+.val{min-width:120px;text-align:right;color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
+.btns{display:flex;flex-wrap:wrap;gap:8px}
+button{font:inherit;font-size:.9rem;color:var(--ink);background:transparent;border:1px solid var(--line);border-radius:8px;padding:6px 12px;cursor:pointer}
+button:hover{border-color:var(--muted)}
+button:focus-visible,input:focus-visible{outline:2px solid var(--hand);outline-offset:2px}
+button.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:14px}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 12px}
+.stat .l{font-size:.8rem;color:var(--muted)}
+.stat .v{font-size:1.25rem;font-weight:600;font-variant-numeric:tabular-nums}
+#note{color:var(--muted);margin:14px 0 0;max-width:75ch}
+.t{fill:var(--ink);font-family:inherit}
+.m{fill:var(--muted);font-family:inherit}
+</style>
+</head>
+<body>
+<main>
+<h1>A ticking watch hand is z<sup>n</sup> on the unit circle</h1>
+<p class="sub">Each tick rotates by ω and scales by r. The watch counts clockwise from 12; the z-plane counts counterclockwise from the real axis. Same angle ωn, so 12 o'clock corresponds to z = 1.</p>
+
+<div class="stage">
+<svg viewBox="0 0 680 350" role="img" aria-label="Watch dial and z-plane side by side">
+<circle cx="170" cy="165" r="135" fill="none" style="stroke:var(--ink)" stroke-width="2.5"/>
+<circle cx="170" cy="165" r="110" fill="none" style="stroke:var(--lume)" stroke-width="1.2" stroke-dasharray="4 4"/>
+<g id="ticks"></g>
+<text class="t" x="170" y="50" text-anchor="middle" font-size="13">12</text>
+<text class="t" x="290" y="170" text-anchor="middle" font-size="13">3</text>
+<text class="t" x="170" y="290" text-anchor="middle" font-size="13">6</text>
+<text class="t" x="50" y="170" text-anchor="middle" font-size="13">9</text>
+<path id="wArc" fill="none" style="stroke:var(--ink)" stroke-width="1.5"/>
+<g id="wTrail"></g>
+<line id="wHand" x1="170" y1="165" x2="170" y2="55" style="stroke:var(--hand)" stroke-width="3.5" stroke-linecap="round"/>
+<circle cx="170" cy="165" r="5.5" style="fill:var(--ink)"/>
+<text class="t" x="170" y="335" text-anchor="middle" font-size="14" font-weight="600">Watch: hand jumps ω per tick</text>
+
+<line x1="370" y1="165" x2="660" y2="165" style="stroke:var(--muted)" stroke-width="1"/>
+<line x1="510" y1="20" x2="510" y2="310" style="stroke:var(--muted)" stroke-width="1"/>
+<circle cx="510" cy="165" r="110" fill="none" style="stroke:var(--lume)" stroke-width="2.5"/>
+<text class="m" x="648" y="182" text-anchor="end" font-size="12">Re</text>
+<text class="m" x="518" y="32" font-size="12">Im</text>
+<text class="m" x="608" y="182" font-size="12">1</text>
+<text class="m" x="386" y="182" font-size="12">−1</text>
+<path id="zArc" fill="none" style="stroke:var(--ink)" stroke-width="1.5"/>
+<g id="zTrail"></g>
+<line id="zLine" x1="510" y1="165" x2="620" y2="165" style="stroke:var(--hand)" stroke-width="1.5" stroke-dasharray="5 4"/>
+<circle id="zPt" cx="620" cy="165" r="6" style="fill:var(--hand)"/>
+<text class="t" x="510" y="335" text-anchor="middle" font-size="14" font-weight="600">z-plane: zⁿ = rⁿ e^(jωn)</text>
+</svg>
+</div>
+
+<div class="controls">
+<div class="row"><label for="deg">ω per tick</label><input type="range" id="deg" min="0" max="359" step="1" value="30"><span class="val" id="degOut"></span></div>
+<div class="row"><label for="rad">Radius r</label><input type="range" id="rad" min="0.85" max="1.05" step="0.01" value="1"><span class="val" id="radOut"></span></div>
+<div class="btns">
+<button id="tick">Tick</button>
+<button id="play" class="primary">Play</button>
+<button id="reset">Reset</button>
+<button data-p="6">6° quartz</button>
+<button data-p="0">0° DC</button>
+<button data-p="180">180° Nyquist</button>
+<button data-p="354">354° alias</button>
+</div>
+</div>
+
+<div class="stats">
+<div class="stat"><div class="l">Tick n</div><div class="v" id="sN">0</div></div>
+<div class="stat"><div class="l">Angle ωn (mod 360°)</div><div class="v" id="sA">0°</div></div>
+<div class="stat"><div class="l">Size rⁿ</div><div class="v" id="sM">1.00</div></div>
+<div class="stat"><div class="l">Looks like a step of</div><div class="v" id="sL">+30°</div></div>
+</div>
+<p id="note"></p>
+</main>
+
+<script>
+const W={x:170,y:165,R:110},Z={x:510,y:165,U:110};
+let n=0,timer=null;
+const $=id=>document.getElementById(id);
+const NS='http://www.w3.org/2000/svg';
+const tg=$('ticks');
+for(let i=0;i<60;i++){const a=i*Math.PI/30,L=i%5?6:13,l=document.createElementNS(NS,'line');
+l.setAttribute('x1',W.x+130*Math.sin(a));l.setAttribute('y1',W.y-130*Math.cos(a));
+l.setAttribute('x2',W.x+(130-L)*Math.sin(a));l.setAttribute('y2',W.y-(130-L)*Math.cos(a));
+l.setAttribute('style','stroke:var(--ink)');l.setAttribute('stroke-width',i%5?0.6:2);tg.appendChild(l);}
+function arc(cx,cy,rr,d,watch){if(d%360===0)return'';const a=d*Math.PI/180,big=d>180?1:0;
+if(watch)return`M${cx} ${cy-rr} A${rr} ${rr} 0 ${big} 1 ${cx+rr*Math.sin(a)} ${cy-rr*Math.cos(a)}`;
+return`M${cx+rr} ${cy} A${rr} ${rr} 0 ${big} 0 ${cx+rr*Math.cos(a)} ${cy-rr*Math.sin(a)}`;}
+function dot(g,x,y,op){const c=document.createElementNS(NS,'circle');c.setAttribute('cx',x);c.setAttribute('cy',y);c.setAttribute('r',3);c.setAttribute('style','fill:var(--hand)');c.setAttribute('opacity',op);g.appendChild(c);}
+function render(){
+const d=+$('deg').value,r=+$('rad').value;
+$('degOut').textContent=d+'° = '+(d/180).toFixed(3)+'π';$('radOut').textContent=r.toFixed(2);
+$('wArc').setAttribute('d',arc(W.x,W.y,30,d,true));$('zArc').setAttribute('d',arc(Z.x,Z.y,30,d,false));
+const wt=$('wTrail'),zt=$('zTrail');wt.innerHTML='';zt.innerHTML='';
+const start=Math.max(0,n-40);
+for(let k=start;k<n;k++){const m=Math.min(Math.pow(r,k),1.35),a=d*k*Math.PI/180,op=(0.15+0.6*(k-start+1)/(n-start+1)).toFixed(2);
+dot(wt,W.x+W.R*m*Math.sin(a),W.y-W.R*m*Math.cos(a),op);dot(zt,Z.x+Z.U*m*Math.cos(a),Z.y-Z.U*m*Math.sin(a),op);}
+const m=Math.min(Math.pow(r,n),1.35),a=d*n*Math.PI/180;
+$('wHand').setAttribute('x2',W.x+W.R*m*Math.sin(a));$('wHand').setAttribute('y2',W.y-W.R*m*Math.cos(a));
+const zx=Z.x+Z.U*m*Math.cos(a),zy=Z.y-Z.U*m*Math.sin(a);
+$('zLine').setAttribute('x2',zx);$('zLine').setAttribute('y2',zy);$('zPt').setAttribute('cx',zx);$('zPt').setAttribute('cy',zy);
+$('sN').textContent=n;$('sA').textContent=((d*n)%360)+'°';$('sM').textContent=Math.pow(r,n).toFixed(2);
+const ap=((d+180)%360)-180;$('sL').textContent=(ap>0?'+':'')+ap+'°';
+let t;
+if(d===0)t='ω = 0 → z = 1: the hand never moves. That is DC.';
+else if(d===180)t='ω = π → z = −1: the hand flips side to side, and you can\'t tell which way it turns. That is the Nyquist limit.';
+else if(d>180)t='ω > π: a '+d+'° jump looks identical to a '+ap+'° jump backward. That is aliasing, the wagon-wheel effect.';
+else t='Each tick multiplies by z = r·e^(jω): rotate by '+d+'°, scale by '+r.toFixed(2)+'.';
+if(r<1)t+=' r < 1: the hand shrinks each tick and spirals inward (decay, stable).';
+else if(r>1)t+=' r > 1: the hand grows each tick and spirals outward (unstable).';
+else t+=' r = 1: the tip stays on the unit circle (sustained oscillation).';
+$('note').textContent=t;}
+function step(){const r=+$('rad').value,m=Math.pow(r,n+1);if(m>1.35||m<0.03){stop();return;}n++;render();}
+function stop(){clearInterval(timer);timer=null;$('play').textContent='Play';}
+$('tick').onclick=step;
+$('play').onclick=()=>{if(timer){stop();return;}timer=setInterval(step,600);$('play').textContent='Pause';};
+$('reset').onclick=()=>{stop();n=0;render();};
+$('deg').oninput=()=>{n=0;render();};$('rad').oninput=()=>{n=0;render();};
+document.querySelectorAll('[data-p]').forEach(b=>b.onclick=()=>{stop();$('deg').value=b.dataset.p;$('rad').value=1;n=0;render();});
+render();
+</script>
+</body>
+</html>
