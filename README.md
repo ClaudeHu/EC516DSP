@@ -18,17 +18,6 @@
 - Unit circle, Nyquist frequency, and aliasing intuition
 - Geometric interpretations of DSP using watch and rotating-hand examples
 
-## Lecture 2 Highlights
-The notes in [Lecture 2](notes/Lecture2.md) emphasize the connection between continuous-time intuition and discrete-time signal processing:
-
-- Complex exponentials such as $e^{j\omega_0 n}$ are used to represent discrete-time sinusoids.
-- Frequency response is written as $H(e^{j\omega}) = |H(e^{j\omega})| e^{j\angle H(e^{j\omega})}$, separating magnitude and phase.
-- Gain is the magnitude response and delay is related to phase slope.
-- The discrete-time Fourier transform captures how a signal behaves at different frequencies.
-- Important properties include periodicity, time shifting, frequency shifting, time reversal, linearity, and convolution.
-- The z-transform generalizes the Fourier transform via $\mathcal{X}(z) = \sum_{n=-\infty}^{\infty} x[n] z^{-n}$.
-- On the z-plane, $|z| = r$ determines growth/decay and the angle determines frequency.
-- The unit circle corresponds to oscillatory behavior, while $z=1$ and $z=-1$ represent DC and Nyquist frequency respectively.
 
 ## Repository Structure
 - `notes/` — lecture notes and study materials
