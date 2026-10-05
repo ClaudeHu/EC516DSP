@@ -12,6 +12,11 @@ $$
 sin(\omega_0 n) = \frac{j}{2}e^{-j\omega_0 n} - \frac{j}{2}e^{j\omega_0 n}
 $$
 
+### Sinusoidal Response of LTI Systems (Textbook Example 2.15)
+
+Let input $x[n] = A cos(\omega_0n + \phi) = \frac{A}{2} e^{j\phi}e^{j\omega_0 n} + \frac{A}{2} e^{-j\phi}e^{-j\omega_0 n}$
+
+
 ## Gain & Delay
 
 $$
