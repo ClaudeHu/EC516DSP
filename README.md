@@ -8,6 +8,7 @@
 - [Lecture 1](notes/Lecture1.md)
 - [Lecture 2](notes/Lecture2.md)
 - [Lecture 3](notes/Lecture3.md)
+- [Lecture 4](notes/Lecture4.md)
 
 ## Topics Covered
 - Discrete-time sinusoids and complex exponentials
