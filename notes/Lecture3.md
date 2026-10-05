@@ -18,3 +18,4 @@ cancel common factor: $X(z) = \frac{N\`(z)}{D\`(z)}$
 
 * zeros: solution to $N\`(z) = 0$
 * poles: solution to ${D\`(z)} = 0$
+* number of poles and number of zeros equal
