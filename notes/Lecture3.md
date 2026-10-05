@@ -14,5 +14,5 @@
 
 $X(z) = \frac{N(z)}{D(z)}$, where N(z) and D(z) are polynomials in z
 
-cancel common factor: $X(z) = \frac{N`(z)}{D`(z)}$
+cancel common factor: $X(z) = \frac{N\`(z)}{D\`(z)}$
 
