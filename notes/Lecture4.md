@@ -4,6 +4,6 @@
 
 ### Terminology
 
-$h[n]$: impulse response
-$H(e^{j\omega})$: frequency response
-$H(z)$: systsem function (transfer function)
+* $h[n]$: impulse response
+* $H(e^{j\omega})$: frequency response
+* $H(z)$: systsem function (transfer function)
