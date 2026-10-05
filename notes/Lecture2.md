@@ -16,6 +16,10 @@ $$
 
 Let input $x[n] = A cos(\omega_0n + \phi) = \frac{A}{2} e^{j\phi}e^{j\omega_0 n} + \frac{A}{2} e^{-j\phi}e^{-j\omega_0 n}$
 
+let $x_1[n] = \frac{A}{2} e^{j\phi}e^{j\omega_0 n}$, $x_2[n] = \frac{A}{2} e^{-j\phi}e^{-j\omega_0 n}$
+
+Then $y_1[n] = H(e^{j\omega_0})x_1[n]$, $y_2[n] = H(e^{-j\omega_0})x_2[n]$
+
 
 ## Gain & Delay
 
