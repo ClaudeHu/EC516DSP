@@ -12,6 +12,4 @@
 
 ### Rational z-transform
 
-$$
-X(z) = \frac{N(z)}{D(z)}
-$$
+$X(z) = \frac{N(z)}{D(z)}$, where N(z) and D(z) are polynomials in z
