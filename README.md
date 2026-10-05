@@ -1,7 +1,7 @@
 # EC516DSP
 
 ## Course Information
-**EC516: Digital Signal Processing** — A comprehensive review of fundamental concepts and applications in digital signal processing.
+**EC516: Digital Signal Processing** — A focused review of fundamental DSP concepts, signal representations, and frequency-domain intuition.
 
 ## Lecture Notes
 - [Course OneNote](https://bushare-my.sharepoint.com/:o:/g/personal/hamid_bu_edu/IgCHdgT42wQNQbm3rUhXqz6AAaL-jCH2TBbi1fSUzNgdAaU?e=xXdVlX)
@@ -9,14 +9,30 @@
 - [Lecture 2](notes/Lecture2.md)
 
 ## Topics Covered
-- Discrete-time signals and systems
-- Fourier analysis and transforms
-- Filter design and implementation
-- Signal processing applications
+- Discrete-time sinusoids and complex exponentials
+- Frequency response, gain, and phase delay
+- Fourier transform and key transform properties
+- Time shifting, frequency shifting, time reversal, linearity, and convolution
+- z-transform and the z-plane
+- Unit circle, Nyquist frequency, and aliasing intuition
+- Geometric interpretations of DSP using watch and rotating-hand examples
 
-## Resources
-- Lecture notes and materials in the `notes/` directory
-- Additional course materials available in the OneNote
+## Lecture 2 Highlights
+The notes in [Lecture 2](notes/Lecture2.md) emphasize the connection between continuous-time intuition and discrete-time signal processing:
+
+- Complex exponentials such as $e^{j\omega_0 n}$ are used to represent discrete-time sinusoids.
+- Frequency response is written as $H(e^{j\omega}) = |H(e^{j\omega})| e^{j\angle H(e^{j\omega})}$, separating magnitude and phase.
+- Gain is the magnitude response and delay is related to phase slope.
+- The discrete-time Fourier transform captures how a signal behaves at different frequencies.
+- Important properties include periodicity, time shifting, frequency shifting, time reversal, linearity, and convolution.
+- The z-transform generalizes the Fourier transform via $\mathcal{X}(z) = \sum_{n=-\infty}^{\infty} x[n] z^{-n}$.
+- On the z-plane, $|z| = r$ determines growth/decay and the angle determines frequency.
+- The unit circle corresponds to oscillatory behavior, while $z=1$ and $z=-1$ represent DC and Nyquist frequency respectively.
+
+## Repository Structure
+- `notes/` — lecture notes and study materials
+- `plots/` — diagrams and visual aids used in the notes
+- `interactive/` — interactive DSP demonstrations
 
 ## Overview
-This repository contains review materials and lecture notes for EC516DSP, designed to support learning and reference for digital signal processing concepts and techniques.
+This repository is a compact DSP review set built around intuitive examples, visual explanations, and core transform theory. It is designed to support learning and quick reference for discrete-time signals, frequency-domain analysis, and z-domain concepts.
