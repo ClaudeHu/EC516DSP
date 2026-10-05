@@ -24,3 +24,5 @@ cancel common factor: $X(z) = \frac{N\`(z)}{D\`(z)}$
 ## Dirichlet Condition
 
 If x[n] is absolutely summable ($\sum_{n=-\infty}^{\infty} |x[n]| < \infty$), $X(e^{j\omega})$ converges
+
+**Stable LTI**: h[n] is absolutely summable
