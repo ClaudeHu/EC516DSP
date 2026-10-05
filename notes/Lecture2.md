@@ -20,6 +20,9 @@ let $x_1[n] = \frac{A}{2} e^{j\phi}e^{j\omega_0 n}$, $x_2[n] = \frac{A}{2} e^{-j
 
 Then $y_1[n] = H(e^{j\omega_0})x_1[n]$, $y_2[n] = H(e^{-j\omega_0})x_2[n]$
 
+* $x[n] = \sum_{k}\alpha_k e^{j\omega_kn}$
+* $y[n] = \sum_{k}\alpha_k H(e^{j \omega_k})e^{j\omega_kn}$
+
 
 ## Gain & Delay
 
