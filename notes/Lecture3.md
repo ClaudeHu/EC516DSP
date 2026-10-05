@@ -20,3 +20,7 @@ cancel common factor: $X(z) = \frac{N\`(z)}{D\`(z)}$
 * poles: solution to ${D\`(z)} = 0$
 * number of poles and number of zeros equal
 * right-sided x[n]: ROC outside the outermost pole
+
+## Dirichlet Condition
+
+If x[n] is absolutely summable ($\sum_{n=-\infty}^{\infty} |x[n]| < \infty$), $X(e^{j\omega})$ converges
