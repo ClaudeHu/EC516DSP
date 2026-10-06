@@ -27,6 +27,15 @@ Then $y_1[n] = H(e^{j\omega_0})x_1[n]$, $y_2[n] = H(e^{-j\omega_0})x_2[n]$
 
 When a stable sinusoidal signal passes through an LTI system, the system modifies its magnitude by multiplying it by $|H(e^{j\omega_0})|$, and shifts its phase by adding $arg[H(e^{j\omega_0})]$
 
+(Problem 2.41 (c)): 
+
+$$
+x[n] = cos(\frac{3\pi}{2}n+\frac{\pi}{4})
+$$
+
+$$
+y[n] = |H(e^{j\omega_0})| cos(\frac{3\pi}{2}n+\frac{\pi}{4} + arg[H(e^{j\omega_0})])
+$$
 
 ## Gain & Delay
 
