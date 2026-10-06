@@ -23,6 +23,10 @@ Then $y_1[n] = H(e^{j\omega_0})x_1[n]$, $y_2[n] = H(e^{-j\omega_0})x_2[n]$
 * $x[n] = \sum_{k}\alpha_k e^{j\omega_kn}$
 * $y[n] = \sum_{k}\alpha_k H(e^{j \omega_k})e^{j\omega_kn}$
 
+**Magnitude and Phase**
+
+When a stable sinusoidal signal passes through an LTI system, the system modifies its magnitude by multiplying it by $|H(e^{j\omega_0})|$, and shifts its phase by adding $arg[H(e^{j\omega_0})]$
+
 
 ## Gain & Delay
 
