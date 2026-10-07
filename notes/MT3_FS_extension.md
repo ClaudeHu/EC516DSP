@@ -575,7 +575,7 @@ Problem-set examples you can now reinterpret:
 
 $$e^{j\pi/2}=j,\qquad e^{j\pi}=-1,\qquad e^{-j\pi/2}=-j,\qquad\frac1j=-j,\qquad e^{j2\pi k}=1$$
 
-$$a+jb=\sqrt{a^2+b^2}e^{j\theta},\quad\theta=\operatorname{atan2}(b,a)\qquad\text{(check the quadrant)}$$
+$$a+jb=\sqrt{a^2+b^2}e^{j\theta},\quad\theta=\mathrm{atan2}(b,a)\qquad\text{(check the quadrant)}$$
 
 $$\left\lvert\frac{z_1}{z_2}\right\rvert=\frac{\lvert z_1\rvert}{\lvert z_2\rvert},\qquad\angle\frac{z_1}{z_2}=\angle z_1-\angle z_2,\qquad z+z^*=2\mathrm{Re}\{z\}$$
 
