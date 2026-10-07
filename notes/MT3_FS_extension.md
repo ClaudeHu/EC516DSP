@@ -369,7 +369,7 @@ Count the zeros of $X(z)$ at $\infty$ before flipping: they land on the origin a
 
 $$y=x*h\quad\Longrightarrow\quad Y(z)=X(z)H(z)\quad\Longrightarrow\quad H(z)=\frac{Y(z)}{X(z)}$$
 
-- **Difference equation to $H(z)$:** take the z-transform of both sides ($x[n-k]\to z^{-k}X(z)$), collect, divide.
+- **Difference equation to $H(z)$:** take the z-transform of both sides ($x[n-k] \to z^{-k}X(z)$), collect, divide.
 - **$H(z)$ to difference equation:** expand the denominator, cross-multiply, inverse transform term by term, solve for $y[n]$.
 - **One input/output pair to $H(z)$** `PS 3.40`: $H=Y/X$, and choose the ROC of $H$ so that it is consistent with the ROCs of $X$ and $Y$.
 - **Desired output to required input** `PS 3.30`: $X(z)=Y(z)/H(z)$. Poles and zeros swap roles.
