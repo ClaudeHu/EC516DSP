@@ -583,7 +583,7 @@ $$\left\lvert\frac{z_1}{z_2}\right\rvert=\frac{\lvert z_1\rvert}{\lvert z_2\rver
 
 $$\cos(-\theta)=\cos\theta,\qquad\sin(-\theta)=-\sin\theta,\qquad\sin\theta=\cos\!\left(\theta-\tfrac{\pi}{2}\right)$$
 
-$$A\cos\theta+B\sin\theta=\sqrt{A^2+B^2}\cos\!\big(\theta-\operatorname{atan2}(B,A)\big)$$
+$$A\cos\theta+B\sin\theta=\sqrt{A^2+B^2}\cos\big(\theta-\mathrm{atan2}(B,A)\big)$$
 
 $$\cos(\pi n)=(-1)^n,\qquad\sin(\pi n)=0,\qquad\sin\!\big(\pi(n-\tfrac12)\big)=(-1)^{n+1}$$
 
