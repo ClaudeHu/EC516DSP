@@ -395,7 +395,7 @@ For a non-recursive filter the stored coefficients **are** the impulse response:
 
 `L4` Use the finite sum formula to put $H(z)$ in closed form, then cross-multiply:
 
-$$h[n]=\left\{1,\tfrac12,\tfrac14,\tfrac18\right\}\quad\Longrightarrow\quad H(z)=\frac{1-\tfrac{1}{16}z^{-4}}{1-\tfrac12z^{-1}}\quad\Longrightarrow\quad y[n]=\tfrac12y[n-1]+x[n]-\tfrac{1}{16}x[n-4]$$
+$$h[n]=\left\lbrace 1,\tfrac12,\tfrac14,\tfrac18\right\rbrace\quad\Longrightarrow\quad H(z)=\frac{1-\tfrac{1}{16}z^{-4}}{1-\tfrac12z^{-1}}\quad\Longrightarrow\quad y[n]=\tfrac12y[n-1]+x[n]-\tfrac{1}{16}x[n-4]$$
 
 - Same filter as $y[n]=x[n]+\tfrac12x[n-1]+\tfrac14x[n-2]+\tfrac18x[n-3]$, but 2 multiplications instead of 3.
 - The pole at $z=\tfrac12$ is cancelled by a zero, so the filter is still FIR. **A recursive difference equation does not imply IIR.**
