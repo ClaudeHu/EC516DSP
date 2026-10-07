@@ -95,11 +95,11 @@ Shifts **add**. For multiplication, shifting both factors by $n_0$ shifts the pr
 
 | Property | Statement | Use |
 |---|---|---|
-| Commutative | $x*h=h*x$ | Flip whichever is easier; the input and impulse response can swap roles |
-| Associative | $(x*h_1)*h_2=x*(h_1*h_2)$ | Cascade: $h=h_1*h_2$, order irrelevant |
-| Distributive | $x*(h_1+h_2)=x*h_1+x*h_2$ | Parallel: $h=h_1+h_2$ |
-| Identity | $x*\delta=x$ | |
-| Running sum | $x[n]*u[n]=\sum_{k\le n}x[k]$ | Step response $s[n]=\sum_{k\le n}h[k]$ and $h[n]=s[n]-s[n-1]$ |
+| Commutative | $x * h=h * x$ | Flip whichever is easier; the input and impulse response can swap roles |
+| Associative | $(x * h_1) * h_2=x * (h_1 * h_2)$ | Cascade: $h=h_1 * h_2$, order irrelevant |
+| Distributive | $x * (h_1+h_2)=x * h_1+x * h_2$ | Parallel: $h=h_1+h_2$ |
+| Identity | $x * \delta=x$ | |
+| Running sum | $x[n] * u[n]=\sum_{k\le n}x[k]$ | Step response $s[n]=\sum_{k\le n}h[k]$ and $h[n]=s[n]-s[n-1]$ |
 
 ### 2.4 Finite-length facts and shortcuts
 
