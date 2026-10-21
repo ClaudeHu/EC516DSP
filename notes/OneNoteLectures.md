@@ -1,6 +1,6 @@
 # EC516: Digital Signal Processing — Lecture Notes
 
-Transcribed from handwritten notes (Lectures 01–13). Sections marked **Unclear part** include a screenshot of the original handwriting for reference; screenshots are in the `images/` folder next to this file.
+Transcribed from handwritten notes (Lectures 01–13). Sections marked **Unclear part** include a screenshot of the original handwriting for reference; screenshots are in the `OneNoteScreenshots/` folder next to this file.
 
 ## Contents
 
@@ -155,7 +155,7 @@ The delay can be a **fractional delay** (not an integer number of samples).
 
 > **Unclear part:** the sign inside the delay term is hard to read. Lecture 07 writes the same result as $n - \left(-\angle H(e^{j\omega_0}) / \omega_0\right)$, which is what is used above.
 >
-> ![Unclear: gain/delay sign in Lecture 02](images/lec02_gain_delay.png)
+> ![Unclear: gain/delay sign in Lecture 02](OneNoteScreenshots/lec02_gain_delay.png)
 
 Two special frequencies:
 
@@ -534,7 +534,7 @@ $$z = \frac{1}{4} e^{-j\left(\frac{\pi}{2} + \pi k\right)}\ ,\quad k = 0, 1$$
 
 > **Unclear part:** the sign of the exponent in the line for $z$ (and the $k = 0$ / $k = 1$ results) is hard to read. The transcription above follows from $z = 1 / z^{-1}$; either way the two poles are at $\pm \tfrac{j}{4}$.
 >
-> ![Unclear: pole calculation in Lecture 04](images/lec04_poles.png)
+> ![Unclear: pole calculation in Lecture 04](OneNoteScreenshots/lec04_poles.png)
 
 *We will finish this next lecture!*
 
@@ -758,7 +758,7 @@ $$= \underbrace{\left|H(e^{j\omega_0})\right|}_{\text{gain at } \omega_0}\ e^{j\
 
 > **Missing content:** the remaining whiteboard photos for Lecture 07 did not load in the source PDF (broken-image placeholders on pages 1–4).
 >
-> ![Missing photos in Lecture 07](images/lec07_missing_photos.png)
+> ![Missing photos in Lecture 07](OneNoteScreenshots/lec07_missing_photos.png)
 
 ---
 
@@ -828,7 +828,7 @@ $$H(e^{j\omega}) = 0 \qquad \angle H(e^{j\omega}) = \text{irrelevant} \qquad -\f
 
 > **Unclear part:** the label on the sample at $n = 2$ looks like "6"; it is read as $b$ because $h[n]$ must be even about its midpoint (and the derivation below uses $b$).
 >
-> ![Unclear: Type II example labels](images/lec08_type2_labels.png)
+> ![Unclear: Type II example labels](OneNoteScreenshots/lec08_type2_labels.png)
 
 $$H(e^{j\omega}) = a + b e^{-j\omega} + b e^{-j2\omega} + a e^{-j3\omega}$$
 
@@ -988,7 +988,7 @@ Qualitative plot of $|H(e^{j\omega})|$: low near $\omega = \pm\pi$ (zero at $-1$
 
 > **Unclear part:** the pole locations and labels (angles $\tfrac{\pi}{4}$, $\tfrac{\pi}{8}$, radius 0.9) and the tick labels on the $|H(e^{j\omega})|$ sketch are small and hard to read.
 >
-> ![Unclear: IIR pole-zero plot and magnitude sketch](images/lec09_iir_example.png)
+> ![Unclear: IIR pole-zero plot and magnitude sketch](OneNoteScreenshots/lec09_iir_example.png)
 
 #### An Important Consequence
 
@@ -1170,7 +1170,7 @@ Now consider the following specs: $\delta_p = 0.5$, $\delta_s = 0.5$, $\omega_p 
 >
 > **Unclear part:** the first line of this boxed statement is split across a page break and partly cut off; the inequalities are reconstructed from the specs above.
 >
-> ![Unclear: boxed statement split across pages](images/lec12_boxed_statement.png)
+> ![Unclear: boxed statement split across pages](OneNoteScreenshots/lec12_boxed_statement.png)
 
 #### Now consider a 3-pt Type I FIR filter
 
