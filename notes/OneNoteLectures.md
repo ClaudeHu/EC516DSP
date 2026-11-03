@@ -876,8 +876,9 @@ Constant group delay makes filter design more flexible.
 
 **Question:** What kinds of impulse responses correspond to **generalized linear phase** (constant group delay)?
 
+
 **Answer:** **FIR filters with real-valued impulse responses that are "even" or "odd" about their midpoints.**
----
+
 
 ## Lecture 08
 
