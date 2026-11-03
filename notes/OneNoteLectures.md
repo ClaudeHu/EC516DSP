@@ -765,26 +765,118 @@ $$\Rightarrow \underbrace{\text{Phase Delay}}_{\text{fractional delay}} \text{ a
 
 *(The classroom PC malfunctioned, so this lecture was done on the whiteboard. Only the first whiteboard photo is present in the PDF; the other photo slots show a broken-image placeholder, so their content could not be transcribed.)*
 
-```text
-x[n] ──► [ H(e^jω) ] ──► y[n]
+### 1. Setup
+
+An LTI system with frequency response $`H(e^{j\omega})`$:
+
+```
+x[n] ──▶ [ H(e^{jω}) ] ──▶ y[n]
 ```
 
-**Linear Phase of filter:**
+### 2. Linear Phase of a Filter
 
-$$H(e^{j\omega}) = \left|H(e^{j\omega})\right| e^{j(\text{constant})\omega}$$
+A filter has **linear phase** if its frequency response can be written as
 
-**Frequency Component at freq $\omega_0$:**
+```math
+H(e^{j\omega}) = \left|H(e^{j\omega})\right| e^{j(\text{constant})\omega}
+```
 
-$$e^{j\omega_0 n} \rightarrow \boxed{H(e^{j\omega})} \rightarrow H(e^{j\omega_0})\ e^{j\omega_0 n}$$
+### 3. Frequency Component at Frequency $`\omega_0`$
 
-$$= \left|H(e^{j\omega_0})\right| e^{j \angle H(e^{j\omega_0})}\ e^{j\omega_0 n}$$
+Feed a single complex exponential into the filter:
 
-$$= \underbrace{\left|H(e^{j\omega_0})\right|}_{\text{gain at } \omega_0}\ e^{j\omega_0 \left(n - \underbrace{\left(-\frac{\angle H(e^{j\omega_0})}{\omega_0}\right)}_{\text{phase delay at } \omega_0}\right)}$$
+```
+e^{jω₀n} ──▶ [ H(e^{jω}) ] ──▶ H(e^{jω₀}) e^{jω₀n}
+```
 
-> **Missing content:** the remaining whiteboard photos for Lecture 07 did not load in the source PDF (broken-image placeholders on pages 1–4).
->
-> ![Missing photos in Lecture 07](OneNoteScreenshots/lec07_missing_photos.png)
+Write $`H(e^{j\omega_0})`$ in polar form:
 
+```math
+\begin{aligned}
+H(e^{j\omega_0})\, e^{j\omega_0 n}
+&= \left|H(e^{j\omega_0})\right| e^{j\angle H(e^{j\omega_0})}\, e^{j\omega_0 n} \\
+&= \underbrace{\left|H(e^{j\omega_0})\right|}_{\text{gain at } \omega_0}\;
+   e^{j\omega_0\left(n - \underbrace{\left(\frac{-\angle H(e^{j\omega_0})}{\omega_0}\right)}_{\text{phase delay at } \omega_0}\right)}
+\end{aligned}
+```
+
+- **Gain at $`\omega_0`$:** $`\left|H(e^{j\omega_0})\right|`$
+- **Phase delay at $`\omega_0`$:**
+
+```math
+\tau_p(\omega_0) = -\frac{\angle H(e^{j\omega_0})}{\omega_0}
+```
+
+### 4. All-pass + Linear Phase
+
+**Assume** $`\left|H(e^{j\omega})\right| = 1`$ for all $`\omega`$ (*all-pass assumption*).
+
+**Question:** For arbitrary $`x[n]`$, what can you say about $`y[n]`$ when the filter is linear phase?
+
+**Answer:** $`y[n]`$ is $`x[n]`$ **delayed**.
+
+### 5. Group Delay
+
+```math
+\tau_g(\omega) = -\frac{d}{d\omega} \angle H(e^{j\omega})
+```
+
+- **Constant group delay** gives you **more flexible filter design** in comparison to constant phase delay.
+- **Note:** Group delay is the same as phase delay if the filter has linear phase.
+
+### 6. Example: Constant Group Delay but Non-constant Phase Delay
+
+**Question:** What is an example of constant group delay when phase delay is *not* constant?
+
+Sketch of the phase $`\angle H(e^{j\omega})`$ over $`-\pi \le \omega \le \pi`$:
+
+```
+               ∠H(e^{jω})
+                   │
+               φ₀  ●
+                   │ ╲      slope (derivative)
+                   │   ╲
+                   │     ╲
+   -π ─────────────┼───────╲──── π   → ω
+      ╲            │
+        ╲          │
+          ╲        │   slope (derivative)
+            ╲      │
+              ╲    ●  -φ₀
+                   │
+```
+
+- The phase jumps from $`-\phi_0`$ to $`\phi_0`$ at $`\omega = 0`$, and both line segments have the **same slope**.
+- The phase is **odd** when $`h[n]`$ is **real**:
+
+```math
+h[n] = h^{*}[n] \quad \Longrightarrow \quad H(e^{j\omega}) = H^{*}(e^{-j\omega})
+```
+
+*Why this works (clarification added to the board sketch):* with slope $`-\alpha`$ the phase is
+
+```math
+\angle H(e^{j\omega}) =
+\begin{cases}
+\phi_0 - \alpha\omega & 0 < \omega \le \pi \\
+-\phi_0 - \alpha\omega & -\pi \le \omega < 0
+\end{cases}
+```
+
+so
+
+```math
+\tau_g(\omega) = \alpha \quad (\text{constant}) \qquad
+\tau_p(\omega) = \alpha - \frac{\phi_0\, \mathrm{sgn}(\omega)}{\omega} = \alpha - \frac{\phi_0}{|\omega|} \quad (\text{not constant})
+```
+
+### 7. Generalized Linear Phase
+
+Constant group delay makes filter design more flexible.
+
+**Question:** What kinds of impulse responses correspond to **generalized linear phase** (constant group delay)?
+
+**Answer:** **FIR filters with real-valued impulse responses that are "even" or "odd" about their midpoints.**
 ---
 
 ## Lecture 08
