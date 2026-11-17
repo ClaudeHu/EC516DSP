@@ -140,7 +140,7 @@ $$
 | Damped cosine | $`r^n\cos(\omega_0 n)u[n]\longleftrightarrow\dfrac{1-r\cos\omega_0 z^{-1}}{1-2r\cos\omega_0 z^{-1}+r^2z^{-2}}`$ | 3.44 (c) |
 | Conjugate pair product | $`(1-re^{j\theta}z^{-1})(1-re^{-j\theta}z^{-1})=1-2r\cos\theta z^{-1}+r^2z^{-2}`$ | 5.28 |
 | Real-sequence symmetry | $`X(e^{-j\omega})=X^*(e^{j\omega})`$: magnitude and real part even, phase and imaginary part odd | 2.32, 2.41 |
-| Even part | $`\operatorname{Re}\{X(e^{j\omega})\}\longleftrightarrow\dfrac{x[n]+x^*[-n]}{2}`$ | 2.55 (f) |
+| Even part | $`\mathrm{Re}\{X(e^{j\omega})\}\longleftrightarrow\dfrac{x[n]+x^*[-n]}{2}`$ | 2.55 (f) |
 | Spot values | $`X(e^{j0})=\sum_n x[n]`$, $`X(e^{j\pi})=\sum_n(-1)^n x[n]`$, $`\int_{-\pi}^{\pi}X(e^{j\omega})d\omega=2\pi x[0]`$ | 2.55 |
 | Parseval | $`\sum_n\lvert x[n]\rvert^2=\dfrac{1}{2\pi}\int_{-\pi}^{\pi}\lvert X(e^{j\omega})\rvert^2d\omega`$ | 5.37 (unit energy) |
 | Sinusoid through a real LTI system | $`\cos(\omega_0 n+\phi)\to\lvert H(e^{j\omega_0})\rvert\cos\left(\omega_0 n+\phi+\angle H(e^{j\omega_0})\right)`$ | 2.41, 2.45, 3.30 |
@@ -268,7 +268,7 @@ The closed form in the first row uses $`1-e^{-j\omega}=2j\sin(\omega/2)e^{-j\ome
 $`X(e^{j\omega})=\dfrac{1}{1-ae^{-j\omega}}`$ with $`-1<a<0`$. Multiply top and bottom by the conjugate of the denominator; $`|1-ae^{-j\omega}|^2=1-2a\cos\omega+a^2`$.
 
 $$
-\operatorname{Re}\{X(e^{j\omega})\}=\frac{1-a\cos\omega}{1-2a\cos\omega+a^2}\qquad\qquad \operatorname{Im}\{X(e^{j\omega})\}=\frac{-a\sin\omega}{1-2a\cos\omega+a^2}
+\mathrm{Re}\{X(e^{j\omega})\}=\frac{1-a\cos\omega}{1-2a\cos\omega+a^2}\qquad\qquad \mathrm{Im}\{X(e^{j\omega})\}=\frac{-a\sin\omega}{1-2a\cos\omega+a^2}
 $$
 
 $$
@@ -302,7 +302,7 @@ From Fig. P2.55: $`x[-3]=-1`$, $`x[-1]=2`$, $`x[0]=1`$, $`x[1]=2`$, $`x[3]=2`$, 
 | $`\angle X(e^{j\omega})`$ | $`X=G(e^{j\omega})e^{-j2\omega}`$ with $`G`$ real | $`-2\omega`$ where $`G>0`$ (add $`\pi`$ where $`G<0`$) |
 | $`\int_{-\pi}^{\pi}X(e^{j\omega})d\omega`$ | inverse DTFT at $`n=0`$ | $`2\pi x[0]=2\pi`$ |
 | sequence with DTFT $`X(e^{-j\omega})`$ | time reversal | $`x[-n]`$ |
-| sequence with DTFT $`\operatorname{Re}\{X(e^{j\omega})\}`$ | even part | $`\tfrac{1}{2}\left(x[n]+x[-n]\right)`$ |
+| sequence with DTFT $`\mathrm{Re}\{X(e^{j\omega})\}`$ | even part | $`\tfrac{1}{2}\left(x[n]+x[-n]\right)`$ |
 
 > [!NOTE]
 > $`X(e^{j\pi})=G(e^{j\pi})e^{-j2\pi}=-4`$ means $`G(e^{j\pi})<0`$, so near $`\omega=\pi`$ the phase is $`-2\omega+\pi`$. Generalized linear phase allows these $`\pi`$ jumps.
